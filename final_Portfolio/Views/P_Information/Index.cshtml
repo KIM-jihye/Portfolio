@@ -1,0 +1,69 @@
+﻿@model IEnumerable<final_Portfolio.DAL.P_Information>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Information1.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phonenum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.university)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.major)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Information1.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phonenum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.university)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.major)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.url)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.studentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.studentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.studentID })
+        </td>
+    </tr>
+}
+
+</table>
